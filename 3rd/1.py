@@ -13,11 +13,11 @@ def getPriorityValue(character):
         return 0
 
 
-def getIntersection(firstCompartment, secondCompartment):
+def getIntersectionOfCompartments(firstCompartment, secondCompartment):
     return set(firstCompartment).intersection(secondCompartment)
 
 
-def getIntersection(firstElf, secondElf, thirdElf):
+def getIntersectionOfElves(firstElf, secondElf, thirdElf):
     return set(firstElf).intersection(secondElf).intersection(thirdElf)
 
 
@@ -30,7 +30,7 @@ def firstTask():
         firstCompartment = clearLine[:elementsCount // 2]
         secondCompartment = clearLine[elementsCount // 2:]
 
-        for element in getIntersection(firstCompartment, secondCompartment):
+        for element in getIntersectionOfCompartments(firstCompartment, secondCompartment):
             result += getPriorityValue(element)
 
     return result
@@ -45,7 +45,7 @@ def secondTask():
         secondElf = lines[i + 1].strip()
         thirdElf = lines[i + 2].strip()
 
-        for element in getIntersection(firstElf, secondElf, thirdElf):
+        for element in getIntersectionOfElves(firstElf, secondElf, thirdElf):
             result += getPriorityValue(element)
 
     return result
